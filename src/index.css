@@ -1,13 +1,67 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Times New Roman", Times, serif;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.steps {
+  width: 350px;
+  background-color: #d1cece;
+  padding: 1.5rem;
+  margin: 50px auto;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.numbers {
+  display: flex;
+  justify-content: space-between;
+}
+.one,
+.two,
+.three {
+  position: relative;
+  color: white;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  background-color: rgb(135, 134, 133);
+}
+.active {
+  background-color: rgb(76, 0, 255);
+}
+.one::after {
+  content: "";
+  width: calc(350px - 80px);
+  height: 1px;
+  background-color: rgba(71, 70, 70, 0.879);
+  position: absolute;
+  left: 100%;
+  top: 50%;
+}
+p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 50px;
+}
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+button {
+  outline: none;
+  width: 74.4px;
+  border: none;
+  padding: 7px 10px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+  font-size: 0.9rem;
+  background-color: rgb(76, 0, 255);
+}
+button:hover {
+  background-color: #333;
 }
