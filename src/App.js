@@ -31,7 +31,7 @@ function Numbers({ step }) {
     <div className="numbers">
       <div className={`one ${step >= 0 ? "active" : ""}`}>1</div>
       <div className={`two ${step >= 1 ? "active" : ""}`}>2</div>
-      <div className={`three ${step === 2 ? "active" : ""}`}>3</div>
+      <div className={`three ${step >= 2 ? "active" : ""}`}>3</div>
     </div>
   );
 }
