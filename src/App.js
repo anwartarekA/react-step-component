@@ -1,7 +1,9 @@
 import { useState } from "react";
+
 const steps = ["Learn React ⚛", "Apply Technologies 💢", "Make Practices 🏆"];
 export default function App() {
   const [step, setStep] = useState(0);
+  const [isOpen, setIsOpen] = useState(true);
   const handlePrevious = () => {
     if (step >= 1) setStep(step - 1);
   };
@@ -9,11 +11,18 @@ export default function App() {
     if (step < 2) setStep(step + 1);
   };
   return (
-    <div className="steps">
-      <Numbers step={step} />
-      <Msgs step={step} />
-      <Btns previous={handlePrevious} next={handleNext} />
-    </div>
+    <>
+      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+        &times;
+      </button>
+      {isOpen && (
+        <div className="steps">
+          <Numbers step={step} />
+          <Msgs step={step} />
+          <Btns previous={handlePrevious} next={handleNext} />
+        </div>
+      )}
+    </>
   );
 }
 
@@ -38,8 +47,12 @@ function Msgs({ step }) {
 function Btns({ previous, next }) {
   return (
     <div className="btns">
-      <button onClick={previous}>previous</button>
-      <button onClick={next}>next</button>
+      <button className="previous" onClick={previous}>
+        previous
+      </button>
+      <button className="next" onClick={next}>
+        next
+      </button>
     </div>
   );
 }
