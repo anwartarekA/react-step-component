@@ -49,12 +49,19 @@ function Msgs({ step }) {
 function Btns({ previous, next }) {
   return (
     <div className="btns">
-      <button className="previous" onClick={previous}>
-        previous
-      </button>
-      <button className="next" onClick={next}>
-        next
-      </button>
+      <Button className="previous" handleClick={previous}>
+        previous👈
+      </Button>
+      <Button className="next" handleClick={next}>
+        next👉
+      </Button>
     </div>
+  );
+}
+function Button({ className, handleClick, children }) {
+  return (
+    <button className={className} onClick={handleClick}>
+      {children}
+    </button>
   );
 }
